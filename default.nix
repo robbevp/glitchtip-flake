@@ -9,10 +9,7 @@ let
     GLITCHTIP_DOMAIN = "https://${cfg.hostname}";
     DEFAULT_FROM_EMAIL = cfg.defaultFromEmail;
     ENABLE_USER_REGISTRATION = if cfg.enableUserRegistration then "TRUE" else "FALSE";
-    DATABASE_HOST = "/run/postgresql";
-    DATABASE_PASSWORD = "glitchtip";
-    DATABASE_USER = "glitchtip";
-    DATABASE_NAME = "glitchtip";
+    DATABASE_URL = "postgresql:///glitchtip?host=/run/postgresql&user=glitchtip&password=glitchtip";
     REDIS_URL = "redis://127.0.0.1:6379/1";
   } // cfg.extraEnv;
 in
