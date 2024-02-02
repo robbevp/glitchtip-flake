@@ -4,7 +4,6 @@ with lib;
 
 let
   cfg = config.services.glitchtip;
-  glitchtip = cfg.package;
   env = {
     GLITCHTIP_DOMAIN = "https://${cfg.hostname}";
     DEFAULT_FROM_EMAIL = cfg.defaultFromEmail;
