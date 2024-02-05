@@ -87,7 +87,7 @@ in
       ensureDatabases = [ "glitchtip" ];
       ensureUsers = [{
         name = "glitchtip";
-        ensurePermissions = { "DATABASE glitchtip" = "ALL PRIVILEGES"; };
+        ensureDBOwnership = true;
       }];
     };
 
