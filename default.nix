@@ -105,7 +105,7 @@ in
         image = "glitchtip/glitchtip";
         autoStart = true;
         ports = [ "8080:8080/tcp" ];
-        # entrypoint = "./bin/run-migrate-and-runserver.sh";
+        entrypoint = "./bin/run-migrate-and-runserver.sh";
         environmentFiles = [
           config.age.secrets."glitchtip/credentials".path
         ];
