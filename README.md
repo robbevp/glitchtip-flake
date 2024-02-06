@@ -35,7 +35,7 @@ Next, you can enable this service as if it is a normal NixOS service:
 
 ```nix
 {
-  services.glichtip = {
+  services.glitchtip = {
     enable = true;
     hostname = "glitchtip.example.com";
     defaultFromEmail = "info@example.com";

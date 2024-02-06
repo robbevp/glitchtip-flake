@@ -4,7 +4,6 @@ with lib;
 
 let
   cfg = config.services.glitchtip;
-  glitchtip = cfg.package;
   env = {
     GLITCHTIP_DOMAIN = "https://${cfg.hostname}";
     DEFAULT_FROM_EMAIL = cfg.defaultFromEmail;
@@ -107,7 +106,7 @@ in
         ports = [ "8080:8080/tcp" ];
         # entrypoint = "./bin/run-migrate-and-runserver.sh";
         environmentFiles = [
-          config.age.secrets."glitchtip/credentials".path
+          cfg.environmentFile
         ];
         extraOptions = [
           "--mount=type=bind,source=/run/postgresql,destination=/run/postgresql"
@@ -120,7 +119,7 @@ in
         autoStart = true;
         entrypoint = "./bin/run-celery-with-beat.sh";
         environmentFiles = [
-          config.age.secrets."glitchtip/credentials".path
+          cfg.environmentFile
         ];
         extraOptions = [
           "--mount=type=bind,source=/run/postgresql,destination=/run/postgresql"
