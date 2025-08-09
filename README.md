@@ -2,6 +2,9 @@
 
 A flake to easily deploy [glitchtip](https://glitchtip.com) on nixos.
 
+> [!WARNING]
+> I am currently not using this anymore - so this is currently not getting any maintenance
+
 ## How to use
 
 If you have your system set up with flakes, you can add Glitchtip as a
